@@ -1,0 +1,93 @@
+
+
+  <link rel="stylesheet" href="./dblImageLoader/iframe/css/bootstrap.css">
+  <link rel="stylesheet" href="./dblImageLoader/iframe/css/cropper.css">
+  <link rel="stylesheet" href="./dblImageLoader/iframe/css/style.css">
+  
+  <script src="./dblImageLoader/iframe/js/cropper.js"></script>
+  <script src="./dblImageLoader/iframe/js/bootstrap.js"></script>
+  <script src="./dblImageLoader/iframe/js/canvas-to-blob.js"></script>
+
+  <div class="container">
+    <h1>点击图片上传</h1>
+    <!-- 原始预览图 -->
+    <label class="label" data-toggle="tooltip" title="上传你的照片">
+      <img class="rounded" id="avatar" src="./dblImageLoader/iframe/images/upload.png" alt="avatar">
+      <input type="file" class="sr-only" id="input" name="file" accept="image/*">
+      <input id='imgUrl' type="hidden" name="imgUrl">
+    </label>
+   <!--  进度条 -->
+    <div class="progress">
+      <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="" aria-valuemin="0" aria-valuemax="100">0%</div>
+    </div>
+    <!-- 提示信息 -->
+    <div class="alert" role="alert"></div>
+    <!-- 模态框 开始 -->
+    <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="modalLabel">剪裁图片</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="row">
+              <div class="col-md-7">
+                <div class="img-container">
+                <img id="image" src="./dblImageLoader/iframe/images/upload.png">
+                </div>
+              </div>
+              <div class="col-md-3">
+<div class="docs-data">
+          <div class="input-group input-group-sm">
+            <span class="input-group-prepend">
+              <label class="input-group-text" for="dataQuality">Quality</label>
+            </span>
+
+            <input type="text" class="form-control" id="dataQuality" placeholder="100" value="100">
+            <span class="input-group-append">
+              <span class="input-group-text">%</span>
+            </span>
+          </div>
+          
+          <div class="input-group input-group-sm">
+            <span class="input-group-prepend">
+              <label class="input-group-text" for="dataWidth">Width</label>
+            </span>
+            <input type="text" class="form-control" id="dataWidth" placeholder="width">
+            <span class="input-group-append">
+              <span class="input-group-text">px</span>
+            </span>
+          </div>
+          <div class="input-group input-group-sm">
+            <span class="input-group-prepend">
+              <label class="input-group-text" for="dataHeight">Height</label>
+            </span>
+            <input type="text" class="form-control" id="dataHeight" placeholder="height">
+            <span class="input-group-append">
+              <span class="input-group-text">px</span>
+            </span>
+          </div>
+          
+</div>
+                  
+
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+            <button type="button" class="btn btn-primary" id="crop">确定剪裁并上传</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- 模态框结束 -->
+  </div>
+
+
+  <script type="text/javascript" src="./dblImageLoader/iframe/js/bootstrap.bundle.min.js"></script>
+  <script type="text/javascript" src="./dblImageLoader/iframe/js/onload.js"></script>
+  
